@@ -4,15 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🔥 فوركس سوق العملات الأجنبية | طيكيل 😈 ملك ملوك الجان</title>
-
     <!-- الخطوط وأيقونات FontAwesome للروابط -->
-    <link href="https://fonts.googleapis.com/css2 family=Cairo:wght@400;600;700;900&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <meta name="description" content="بوابة طيكيل للفوركس وسوق العملات الأجنبية - التحليلات الذكية برعاية مستشار المحقق نادر بكار الماورائي.">
     <meta name="keywords" content="فوركس, سوق العملات, بوت تلجرام, ذكاء اصطناعي, طيكيل, المحقق نادر بكار">
     <meta name="author" content="ESO Company, إسلام الهاشمي">
-
     <style>
         :root {
             --bg-color: #0b0c10;
@@ -22,7 +19,6 @@
             --danger-red: #ff4d4d;
             --font-ar: 'Cairo', sans-serif;
         }
-
         body {
             background-color: var(--bg-color);
             color: #ffffff;
@@ -31,7 +27,6 @@
             padding: 0;
             overflow-x: hidden;
         }
-
         /* الهيدر العلوي */
         header {
             display: flex;
@@ -42,9 +37,8 @@
             backdrop-filter: blur(10px);
             border-bottom: 2px solid #1f2833;
         }
-
         .logo { font-size: 1.5rem; font-weight: 900; color: var(--text-gold); }
-        
+         
         .lang-btn {
             background: transparent;
             border: 2px solid var(--text-gold);
@@ -56,7 +50,7 @@
             transition: 0.3s;
         }
         .lang-btn:hover { background-color: var(--text-gold); color: var(--bg-color); }
-
+         
         /* واجهة الهيرو الرئيسية */
         #hero {
             display: flex;
@@ -64,14 +58,13 @@
             align-items: center;
             text-align: center;
             min-height: 50vh;
-
-background: url('https://i.postimg.cc/fyfYP5LN/2385aef2-576c-4c3e-b299-412e7edd6d48.jpg') no-repeat center/cover;
+            background: linear-gradient(rgba(11,12,16,0.6), rgba(11,12,16,0.9)), url('https://i.postimg.cc/fyfYP5LN/2385aef2-576c-4c3e-b299-412e7edd6d48.jpg') no-repeat center/cover;
             padding: 40px 20px;
         }
-        .hero-title { font-size: 2.3rem; font-weight: 900; margin-bottom: 20px; }
+        .hero-title { font-size: 2.3rem; font-weight: 900; margin-bottom: 20px; text-shadow: 0 0 15px rgba(0,0,0,0.8); }
         .hero-magic { color: var(--text-gold); }
-        .hero-sub { font-size: 1.3rem; color: #a4b3b6; margin-bottom: 30px; }
-        
+        .hero-sub { font-size: 1.3rem; color: #a4b3b6; margin-bottom: 30px; text-shadow: 0 0 10px rgba(0,0,0,0.8); }
+         
         #hero-telegram-btn {
             background: linear-gradient(45deg, #0088cc, #00a6ff);
             color: #ffffff;
@@ -87,26 +80,56 @@ background: url('https://i.postimg.cc/fyfYP5LN/2385aef2-576c-4c3e-b299-412e7edd6
             display: inline-block;
         }
         #hero-telegram-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 25px rgba(0, 136, 204, 0.7); }
-
-        /* حاوية الأدوات الحية (الشارت والقمر) */
+         
+        /* حاوية الأدوات الحية */
         .live-dashboard {
             display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
             padding: 20px 5%;
         }
-        @media (max-width: 768px) { .live-dashboard { grid-template-columns: 1fr; } }
-
+        @media (max-width: 992px) { .live-dashboard { grid-template-columns: 1fr; } }
+         
         .dashboard-card {
             background-color: var(--container-bg);
             border-radius: 10px;
             padding: 20px;
             border: 1px solid rgba(102, 252, 241, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* كارت الفلك والقمر */
-        .moon-status { text-align: center; }
-        .moon-icon { font-size: 4rem; color: var(--text-gold); margin: 15px 0; }
+        /* كارت الفلك الرقمي ورسم القمر */
+        .moon-status { text-align: center; width: 100%; box-sizing: border-box;}
+        .moon-graphic-container {
+            width: 120px;
+            height: 120px;
+            background: #000;
+            border-radius: 50%;
+            position: relative;
+            margin: 15px auto;
+            overflow: hidden;
+            box-shadow: inset -10px -10px 20px rgba(0,0,0,0.8), 0 0 15px rgba(197, 168, 128, 0.4);
+        }
+        .moon-light {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, #fffde1 0%, #c5a880 70%);
+            border-radius: 50%;
+            transition: all 0.5s ease;
+        }
+     
+        .moon-shadow{
+            position:absolute;
+            top:0;
+            height:100%;
+            width:100%;
+            border-radius:50%;
+            background:#0b0c10;
+            transition:.6s;
+        }
         .liquidity-badge {
             background-color: rgba(102, 252, 241, 0.1);
             color: var(--neon-blue);
@@ -114,58 +137,99 @@ background: url('https://i.postimg.cc/fyfYP5LN/2385aef2-576c-4c3e-b299-412e7edd6
             border-radius: 20px;
             display: inline-block;
             font-weight: bold;
+            margin-top: 10px;
+        }
+        .date-display { font-size: 1.1rem; color: var(--text-gold); font-weight: bold; margin-top: 5px; }
+
+        .moon-calendar{
+            display:grid;
+            grid-template-columns:repeat(7,1fr);
+            gap:6px;
+            margin-top:20px;
+        }
+
+        .day-box{
+            background:#111;
+            padding:10px;
+            border-radius:10px;
+            text-align:center;
+            font-size:14px;
+            border:1px solid rgba(255,255,255,.1);
+        }
+
+        .today{
+            border:2px solid #66fcf1;
+            box-shadow:0 0 10px #66fcf1;
+        }
+
+        .full-moon{
+            background:#c5a880;
+            color:#000;
+        }
+
+        .dark-moon{
+            background:#300;
+        }
+
+        .new-moon{
+            background:#2b7a78;
+        }
+        /* العجلة الفلكية التفاعلية للبرنامج */
+        .cosmic-container { width: 100%; text-align: center; padding: 10px; }
+        .cosmic-wheel {
+            width: 200px; height: 200px;
+            border: 3px dashed var(--text-gold);
+            border-radius: 50%;
+            margin: 15px auto;
+            position: relative;
+            transition: transform 0.1s linear;
+            background: radial-gradient(circle, rgba(31,40,51,0.6) 0%, rgba(11,12,16,0.9) 100%);
+        }
+        .center-earth {
+            position: absolute; top: calc(50% - 15px); left: calc(50% - 15px);
+            width: 30px; height: 30px; background: #2b7a78; border-radius: 50%;
+            box-shadow: 0 0 8px #66fcf1;
+        }
+        .orbit-object { position: absolute; border-radius: 50%; font-size: 1.1rem; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;}
+        #cosmic-sun { color: #ffaa00; text-shadow: 0 0 10px #ffaa00; top: 10px; left: calc(50% - 12px); }
+        #cosmic-moon { color: #ffffcc; text-shadow: 0 0 10px #fff; bottom: 10px; left: calc(50% - 12px); }
+        #cosmic-mars { color: #ff4d4d; text-shadow: 0 0 10px #ff4d4d; left: 10px; top: calc(50% - 12px); }
+        #cosmic-jupiter { color: #c5a880; text-shadow: 0 0 10px #c5a880; right: 10px; top: calc(50% - 12px); }
+         
+        .wheel-slider {
+            width: 80%; -webkit-appearance: none; background: var(--container-bg);
+            height: 6px; border-radius: 3px; outline: none; margin: 15px 0;
+            border: 1px solid var(--text-gold);
+        }
+        .wheel-slider::-webkit-slider-thumb {
+            -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%;
+            background: var(--text-gold); cursor: pointer; box-shadow: 0 0 8px var(--neon-blue);
         }
 
         /* أقسام المحتوى والتنويهات */
         section, .fair-algorithm {
-            padding: 40px 5%;
-            margin: 20px 5%;
-            border-radius: 10px;
+            padding: 40px 5%; margin: 20px 5%; border-radius: 10px;
             background-color: rgba(31, 40, 51, 0.5);
         }
-        
         h2, h3 { color: var(--text-gold); }
-        
         .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px; margin-top: 20px;
         }
         .grid-3 div, .gift-card {
-            background-color: var(--container-bg);
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid var(--text-gold);
+            background-color: var(--container-bg); padding: 20px;
+            border-radius: 8px; border-left: 4px solid var(--text-gold);
         }
-
-        /* الفوتر المتطور */
+        /* الفوتر */
         footer {
-            background-color: #050608;
-            padding: 40px 5% 20px 5%;
-            text-align: center;
+            background-color: #050608; padding: 40px 5% 20px 5%; text-align: center;
             border-top: 2px solid var(--container-bg);
         }
         .footer-symbols { font-size: 1.2rem; color: var(--text-gold); letter-spacing: 5px; margin-bottom: 20px; }
-        .footer-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-        .footer-links a {
-            color: #a4b3b6;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
+        .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 25px; }
+        .footer-links a { color: #a4b3b6; text-decoration: none; font-size: 0.9rem; transition: 0.3s; display: flex; align-items: center; gap: 5px; }
         .footer-links a:hover { color: var(--neon-blue); }
-
-        /* لتغيير الاتجاه برمجياً للغة الإنجليزية */
+         
         html[dir="ltr"] { --font-ar: 'Montserrat', sans-serif; }
         html[dir="ltr"] .grid-3 div, html[dir="ltr"] .gift-card { border-left: none; border-right: 4px solid var(--text-gold); }
     </style>
@@ -191,11 +255,7 @@ background: url('https://i.postimg.cc/fyfYP5LN/2385aef2-576c-4c3e-b299-412e7edd6
       {"proName": "FX:XAUUSD", "title": "GOLD / USD"},
       {"proName": "FX_IDC:AUDUSD", "title": "AUD/USD"}
     ],
-    "showSymbolLogo": true,
-    "colorTheme": "dark",
-    "isTransparent": true,
-    "displayMode": "adaptive",
-    "locale": "ar"
+    "showSymbolLogo": true, "colorTheme": "dark", "isTransparent": true, "displayMode": "adaptive", "locale": "ar"
     }
     </script>
   </div>
@@ -207,52 +267,79 @@ background: url('https://i.postimg.cc/fyfYP5LN/2385aef2-576c-4c3e-b299-412e7edd6
     <h1 class="hero-title" id="h-title">
       <span class="hero-magic">$</span> موقع الفوركس وسوق العملات الأجنبية [FX TK04] <span class="hero-magic">$</span>
     </h1>
-
     <p class="hero-sub" id="h-sub">مملكة طيكيل | تحليلات فوركس + قمر فلكي + مجاني بحدود</p>
     <a href="https://t.me/TK04chat_bot?start" target="_blank" id="hero-telegram-btn">
         <i class="fab fa-telegram"></i> <span id="btn-text">استدعي طيكيل على تلجرام الآن</span>
-        
-        
-        
-        
-        
     </a>
   </div>
 </section>
 
-<!-- لوحة التحكم الحية (الشارت و الفلك) -->
+<!-- لوحة التحكم الحية المتطورة (الفلك الدائري وقمر السيولة) -->
 <div class="live-dashboard">
-    <!-- كارت القمر الفلكي -->
+    <!-- كارت القمر الفلكي والتقويم بالأرقام والرسم -->
     <div class="dashboard-card moon-status">
-        <h3 id="moon-card-title">🪐 الرصد الفلكي للسيولة</h3>
-        <div class="moon-icon"><i class="fas fa-moon"></i></div>
-        <p id="moon-phase-text">حالة القمر الحالية: جاري الحساب مالتداول فلكياً...</p>
-        <div class="liquidity-badge" id="liquidity-val">سيولة متوازنة</div>
+        <h3 id="moon-card-title">🪐 الرصد الفلكي والتقويم الرقمي</h3>
+        <div class="date-display" id="numeric-date">اليوم: --</div>
+        <div id="moon-calendar" class="moon-calendar"></div>
+         
+        <!-- الرسم الحقيقي المتغير للقمر -->
+        <div class="moon-graphic-container">
+            <div class="moon-light" id="moon-render"></div>
+            <div class="moon-shadow" id="shadow-render"></div>
+        </div>
+         
+        <p id="moon-phase-text">جاري حساب حركة ومظهر القمر الفلكي المالي...</p>
+        <div class="liquidity-badge" id="liquidity-val">جاري الحساب...</div>
     </div>
-    
-    <!-- كارت الشارت الحي -->
+     
+    <!-- كارت العجلة الفلكية التفاعلية (محاكاة برنامج الـ 9) -->
     <div class="dashboard-card">
-        <div class="tradingview-widget-container" style="height:300px;">
+        <h3 id="wheel-card-title">🎡 عجلة الاقتران الفلكي المالي</h3>
+        <p style="font-size:0.85rem; color:#a4b3b6;" id="wheel-card-sub">حرك العجلة لرصد اقتران الكواكب والشمس مع مسار السيولة</p>
+         
+        <div class="cosmic-wheel" id="planetary-wheel">
+            <div class="center-earth"><i class="fas fa-globe" style="font-size:0.8rem; margin:7px;"></i></div>
+            <div class="orbit-object" id="cosmic-sun"><i class="fas fa-sun"></i></div>
+            <div class="orbit-object" id="cosmic-moon"><i class="fas fa-moon"></i></div>
+            <div class="orbit-object" id="cosmic-mars"><i class="fas fa-bolt"></i></div>
+            <div class="orbit-object" id="cosmic-jupiter"><i class="fas fa-coins"></i></div>
+        </div>
+         
+        <input type="range" min="1" max="365" value="150" class="wheel-slider" id="time-slider" oninput="updateCosmicWheel(this.value)">
+        <div style="font-size: 0.9rem; color: var(--neon-blue);" id="alignment-status">اقتران مالي متوازن</div>
+    </div>
+</div>
+
+<!-- الشارت الحي والأخبار الحمراء المهمة في صف واحد متناسق -->
+<div class="live-dashboard" style="padding-top:0;">
+    <!-- كارت الشارت الحي -->
+    <div class="dashboard-card" style="display:block;">
+        <div class="tradingview-widget-container" style="height:350px;">
           <div id="tradingview_chart"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
           <script type="text/javascript">
           new TradingView.widget({
-            "width": "100%",
-            "height": 300,
-            "symbol": "FX:EURUSD",
-            "interval": "H1",
-            "timezone": "Etc/UTC",
-            "theme": "dark",
-            "style": "1",
-            "locale": "ae",
-            "toolbar_bg": "#f1f3f6",
-            "enable_publishing": false,
-            "hide_side_toolbar": true,
-            "allow_symbol_change": true,
-            "container_id": "tradingview_chart"
+            "width": "100%", "height": 350, "symbol": "FX:EURUSD", "interval": "H1",
+            "timezone": "Etc/UTC", "theme": "dark", "style": "1", "locale": "ae",
+            "toolbar_bg": "#f1f3f6", "enable_publishing": false, "hide_side_toolbar": true,
+            "allow_symbol_change": true, "container_id": "tradingview_chart"
           });
           </script>
         </div>
+    </div>
+     
+    <!-- كارت الأجندة الإخبارية المفلترة للأخبار الحمراء الهامة فقط -->
+    <div class="dashboard-card" style="display:block; overflow:hidden;">
+      <h3 style="margin-top:0; margin-bottom:10px;" id="news-title">📰 مفكرة طيكيل للأخبار الحمراء المؤثرة</h3>
+      <div class="tradingview-widget-container" style="height:300px;">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-economic-calendar.js" async>
+        {
+          "colorTheme": "dark", "isTransparent": true, "width": "100%", "height": "100%", "locale": "ar",
+          "importanceFilter": "1" 
+        }
+        </script>
+      </div>
     </div>
 </div>
 
@@ -329,11 +416,12 @@ background: url('https://i.postimg.cc/fyfYP5LN/2385aef2-576c-4c3e-b299-412e7edd6
 </footer>
 
 <script>
-    // مصفوفة النصوص للتبديل بين اللغتين عربي وإنجليزي بكل دقة
+    // مصفوفة اللغات والترجمة الشاملة لجميع الإضافات
     const data = {
         ar: {
-            title: " موقع الفوركس وسوق العملات الأجنبية [FX TK04] $", sub: "برعاية طيكيل.. ملك ملوك الجان وحامي المحقق نادر بكار", btn: "استدعي طيكيل على تلجرام الآن",
-            m_title: "🪐 الرصد الفلكي للسيولة", m_phase: "بدر مكتمل: سيولة فلكية ضخمة جداً بالسوق الحالي", m_liq: "سيولة عالية جداً",
+            title: " موقع الفوركس وسوق العملات الأجنبية [FX TK04] $", sub: "مملكة طيكيل | تحليلات فوركس + قمر فلكي + مجاني بحدود", btn: "استدعي طيكيل على تلجرام الآن",
+            m_title: "🪐 الرصد الفلكي والتقويم الرقمي", news_title: "📰 مفكرة طيكيل للأخبار الحمراء المؤثرة",
+            wheel_t: "🎡 عجلة الاقتران الفلكي المالي", wheel_s: "حرك العجلة لرصد اقتران الكواكب والشمس مع مسار السيولة",
             why_t: "😈 لماذا منصة TK04 مختلفة؟", f1_t: "😈 وصول حقيقي للمحتوى", f1_d: "ما يهمنا هو ثقة العميل وليس الربح، نبحث عن احتياج العميل ونعرف يأسه وتخبطه ما بين أخبار كاذبة ومتداولين غير جديرين بالثقة.",
             f2_t: "😈 مع طيكيل TK04 ملك ملوك الجان", f2_d: "ليس ذكاءً اصطناعياً، فهو ملك ملوك الجان السحري وبطل روايات وأسطورة مختلفة في الحديث معه.",
             f3_t: "😈 بيئة آمنة", f3_d: "يتم استخدام أنظمة ذكية وتقارير دقيقة:",
@@ -342,11 +430,24 @@ background: url('https://i.postimg.cc/fyfYP5LN/2385aef2-576c-4c3e-b299-412e7edd6
             rec_t: "توصيات وتحليلات", rec_d1: "توصيات وتحليلات من قلب السوق إليك بالمجان.", rec_d2: "طيكيل ملك ملوك الجان يملك حدوداً للاستخدام فهو مجاني 100%.",
             soon_t: "قريبًا مع TK04", soon_s: "دردشة حية 24/7 مع ملك ملوك الجان TK04", lbl: "قريباً",
             g1: "توصيات يومية وأسبوعية وشهرية", g2: "تحليلات وشرح للأخبار", g3: "تحليل فلكي ورقمي",
-            cr: "إسلام الهاشمي © جميع الحقوق محفوظة 2026 | ESO 🚀"
+            cr: "إسلام الهاشمي © جميع الحقوق محفوظة 2026 | ESO 🚀",
+            phases: {
+                full: ["قمر مكتمل (Full Moon): طاقة فلكية قصوى وسحب سيولة ضخم جداً بالسوق! 💥", "سيولة عالية جداً 💥"],
+                new: ["قمر جديد (New Moon): بداية دورة مالية وتدفق سيولة شرائية جديدة ونظيفة 🟢", "سيولة شرائية صاعدة 🟢"],
+                dark: ["قمر مظلم (Dark Moon): خفاء تام للرؤية الفنية، ترقب وحذر شديد بالسوق ⏳", "سيولة منخفضة وحذرة ⏳"],
+                balance: ["قمر في طور متوازن فلكياً: تحركات فنية طبيعية دون طفرات ماورائية ⚖️", "سيولة متوازنة ⚖️"]
+            },
+            alignments: [
+                "ترقب فلكي: اقتران الشمس مع المشتري يعزز صعود الذهب 🪙",
+                "عاصفة سيولة: اقتران مربع مع المريخ يحفز التذبذب العالي بالدولار ⚡",
+                "هدوء أسطوري: الكواكب في مسار آمن والتحليل الفني هو الحاكم ⚖️",
+                "انعكاس فلكي: الشمس والقمر في زاوية حادة.. تصفية عقود مبكرة 🚨"
+            ]
         },
         en: {
-            title: " Forex & Currency Market Platform [FX TK04] $", sub: "Powered by Tykeel.. The King of Jinn & Guardian of Detective Nader Bakar", btn: "Summon Tykeel on Telegram Now",
-            m_title: "🪐 Astrological Liquidity Tracker", m_phase: "Full Moon: High celestial liquidity flowing into the market", m_liq: "Ultra High Liquidity",
+            title: " Forex & Currency Market Platform [FX TK04] $", sub: "Tykeel's Kingdom | Forex Analysis + Lunar Tracker + Free and Limited", btn: "Summon Tykeel on Telegram Now",
+            m_title: "🪐 Celestial Tracking & Digital Calendar", news_title: "📰 Tykeel's High Impact Red News Feed",
+            wheel_t: "🎡 Cosmic Financial Alignment Wheel", wheel_s: "Rotate the wheel to align planets, sun, and moon with market liquidity tracks",
             why_t: "😈 Why is TK04 Platform Different?", f1_t: "😈 Authentic Content Access", f1_d: "We care about trust, not profit. We understand the trader's struggle amidst fake news and unreliable mentors.",
             f2_t: "😈 With Tykeel: The King of Jinn", f2_d: "This is not standard AI. He is the mystical King of Jinn, a legendary entity with an unparalleled lore.",
             f3_t: "😈 Secured Environment", f3_d: "We utilize smart analytical workflows and safe rules:",
@@ -355,11 +456,23 @@ background: url('https://i.postimg.cc/fyfYP5LN/2385aef2-576c-4c3e-b299-412e7edd6
             rec_t: "Signals & Market Analysis", rec_d1: "Free signals and real-time analysis straight from the market core.", rec_d2: "Tykeel has strict usage thresholds but remains 100% free.",
             soon_t: "Coming Soon with TK04", soon_s: "Live 24/7 Chat with Tykeel the King of Jinn", lbl: "Soon",
             g1: "Daily, Weekly, and Monthly Signals", g2: "News Analysis & Breakdown", g3: "Astrological & Numerical Systems",
-            cr: "Eslam Al-Hashemi © All Rights Reserved 2026 | ESO 🚀"
+            cr: "Eslam Al-Hashemi © All Rights Reserved 2026 | ESO 🚀",
+            phases: {
+                full: ["Full Moon: Maximum celestial energy flowing. High liquidity surge! 💥", "Ultra High Liquidity 💥"],
+                new: ["New Moon: Beginning of a new fiscal cycle, clean buying volumes flowing 🟢", "Rising Buying Liquidity 🟢"],
+                dark: ["Dark Moon: Complete technical blackout. Safe entry strategies recommended ⏳", "Low & Cautious Liquidity ⏳"],
+                balance: ["Balanced Moon Phase: Standard technical movements ruling the charts ⚖️", "Balanced Liquidity ⚖️"]
+            },
+            alignments: [
+                "Celestial Alert: Sun-Jupiter alignment bolsters Gold bullish sentiment 🪙",
+                "Liquidity Storm: Mars square alignment triggers high volatility on USD ⚡",
+                "Mystic Calm: Planetary paths are clear; technical charts are dominant ⚖️",
+                "Cosmic Reversal: Sun & Moon sharp angle; early contract expirations ahead 🚨"
+            ]
         }
     };
 
-    // كود تبديل اللغة وتحديث العناصر تلقائياً
+    // كود تحويل اللغة والمزامنة لجميع العناصر والبيانات المضافة
     function toggleLanguage() {
         const htmlTag = document.getElementById('main-html');
         const langBtn = document.getElementById('lang-btn');
@@ -369,13 +482,11 @@ background: url('https://i.postimg.cc/fyfYP5LN/2385aef2-576c-4c3e-b299-412e7edd6
         htmlTag.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
         langBtn.textContent = currentLang === 'ar' ? 'English' : 'العربية';
 
-        // تحديث جميع نصوص الصفحة
         document.getElementById('h-title').innerHTML = `<span class="hero-magic">$</span> ${data[currentLang].title} <span class="hero-magic">$</span>`;
         document.getElementById('h-sub').textContent = data[currentLang].sub;
         document.getElementById('btn-text').textContent = data[currentLang].btn;
         document.getElementById('moon-card-title').textContent = data[currentLang].m_title;
-        document.getElementById('moon-phase-text').textContent = data[currentLang].m_phase;
-        document.getElementById('liquidity-val').textContent = data[currentLang].m_liq;
+        document.getElementById('news-title').textContent = data[currentLang].news_title;
         document.getElementById('why-title').textContent = data[currentLang].why_t;
         document.getElementById('feat1-t').textContent = data[currentLang].f1_t;
         document.getElementById('feat1-d').textContent = data[currentLang].f1_d;
@@ -395,29 +506,108 @@ background: url('https://i.postimg.cc/fyfYP5LN/2385aef2-576c-4c3e-b299-412e7edd6
         document.getElementById('g2-t').textContent = data[currentLang].g2;
         document.getElementById('g3-t').textContent = data[currentLang].g3;
         document.getElementById('footer-cr').textContent = data[currentLang].cr;
+        document.getElementById('wheel-card-title').textContent = data[currentLang].wheel_t;
+        document.getElementById('wheel-card-sub').textContent = data[currentLang].wheel_s;
         
         document.querySelectorAll('.soon-lbl').forEach(el => el.textContent = data[currentLang].lbl);
+        calculateMoonAndDate();
+        updateCosmicWheel(document.getElementById('time-slider').value);
     }
 
-    // لتحديث حالة القمر تلقائياً عند تحميل الصفحة بناء على تاريخ اليوم (محاكاة ذكية)
-    window.onload = function() {
+    // دالة حساب ورسم طور القمر الحقيقي والتقويم الرقمي بالأرقام
+    function calculateMoonAndDate() {
         const d = new Date();
         const day = d.getDate();
+        const month = d.getMonth() + 1;
+        const year = d.getFullYear();
+        const currentLang = document.getElementById('main-html').getAttribute('lang') || 'ar';
+        
+        document.getElementById('numeric-date').textContent = currentLang === 'ar' ? `التاريخ الرقمي الفلكي: ${year}/${month}/${day}` : `Celestial Digital Date: ${year}/${month}/${day}`;
+        
+        const moonRender = document.getElementById('moon-render');
+        const shadowRender = document.getElementById('shadow-render');
         const phaseText = document.getElementById('moon-phase-text');
         const liqVal = document.getElementById('liquidity-val');
         
         if(day >= 13 && day <= 16) {
-            phaseText.textContent = "القمر بدر مكتمل: طاقة فلكية قصوى وسحب سيولة ضخم جداً بالسوق.";
-            liqVal.textContent = "سيولة عالية جداً 💥";
+            // بدر مكتمل - Full Moon
+            shadowRender.style.transform="translateX(100%)";
+            phaseText.textContent = data[currentLang].phases.full[0];
+            liqVal.textContent = data[currentLang].phases.full[1];
             liqVal.style.color = "#66fcf1";
-        } else if (day >= 27 || day <= 3) {
-            phaseText.textContent = "القمر في محاق الخفاء: حركة السوق هادئة والسيولة منخفضة وحذرة.";
-            liqVal.textContent = "سيولة منخفضة ⏳";
+        } else if (day >= 27 || day <= 2) {
+            // قمر مظلم / محاق - Dark Moon
+            shadowRender.style.transform="translateX(0)";
+            shadowRender.style.left = "0";
+            phaseText.textContent = data[currentLang].phases.dark[0];
+            liqVal.textContent = data[currentLang].phases.dark[1];
             liqVal.style.color = "#ff4d4d";
+        } else if (day > 2 && day < 13) {
+            // قمر جديد صاعد / هلال متزايد - New / Waxing Moon
+            shadowRender.style.transform="translateX(50%)";
+            shadowRender.style.left = "initial";
+            shadowRender.style.right = "0";
+            phaseText.textContent = data[currentLang].phases.new[0];
+            liqVal.textContent = data[currentLang].phases.new[1];
+            liqVal.style.color = "#66fcf1";
         } else {
-            phaseText.textContent = "القمر في طور متوازن فلكياً: تحركات فنية طبيعية دون طفرات ماورائية.";
-            liqVal.textContent = "سيولة متوازنة ⚖️";
+            // أطوار متوازنة - Balanced
+            shadowRender.style.transform="translateX(30%)";
+            shadowRender.style.left = "0";
+            phaseText.textContent = data[currentLang].phases.balance[0];
+            liqVal.textContent = data[currentLang].phases.balance[1];
+            liqVal.style.color = "#c5a880";
         }
+    }
+
+    // دالة تحريك العجلة الفلكية كوكب شمس قمر تزامناً مع تحريك العجلة
+    function updateCosmicWheel(val) {
+        const wheel = document.getElementById('planetary-wheel');
+        const statusText = document.getElementById('alignment-status');
+        const currentLang = document.getElementById('main-html').getAttribute('lang') || 'ar';
+        
+        const rotationDegrees = val * 3.6;
+        wheel.style.transform = `rotate(${rotationDegrees}deg)`;
+        
+        document.querySelectorAll('.orbit-object').forEach(el => {
+            el.style.transform = `rotate(${-rotationDegrees}deg)`;
+        });
+        
+        const alignmentIndex = Math.floor((val % 4));
+        statusText.textContent = data[currentLang].alignments[alignmentIndex];
+    }
+
+    function generateMoonCalendar() {
+        const calendar = document.getElementById("moon-calendar");
+        calendar.innerHTML = "";
+        const today = new Date().getDate();
+
+        for(let i=1; i<=30; i++){
+            const box = document.createElement("div");
+            box.classList.add("day-box");
+            box.innerHTML = i;
+
+            if(i === today){
+                box.classList.add("today");
+            }
+            if(i >= 13 && i <= 16){
+                box.classList.add("full-moon");
+            }
+            if(i >= 27 || i <= 2){
+                box.classList.add("dark-moon");
+            }
+            if(i > 2 && i < 13){
+                box.classList.add("new-moon");
+            }
+            calendar.appendChild(box);
+        }
+    }
+
+    // تشغيل الحسابات تلقائياً عند التحميل
+    window.onload = function () {
+        calculateMoonAndDate();
+        generateMoonCalendar();
+        updateCosmicWheel(15);
     }
 </script>
 </body>

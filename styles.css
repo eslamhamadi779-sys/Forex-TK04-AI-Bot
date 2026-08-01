@@ -1,3 +1,4 @@
+
 /* ============================================================
    # [AR] إعادة تعيين التنسيقات العامة للمتصفحات (CSS Reset)
    # [EN] Global CSS Reset & Box Sizing Core Rules
@@ -40,6 +41,8 @@ body {
 html[dir="ltr"] { 
     --font-ar: 'Montserrat', sans-serif; 
 }
+
+
 
 /* ============================================================
    # [AR] التنسيق الخاص بالهيدر العلوي وزر اللغات
@@ -342,10 +345,7 @@ section, .fair-algorithm {
 
 h2, h3 { color: var(--text-gold); }
 
-.why-TK04, .coming-soon {
-    padding: 40px 5%; margin: 20px 5%; border-radius: 10px;
-    background-color: rgba(31, 40, 51, 0.5);
-}
+
 
 .soon-lbl { font-weight: 700; font-size: 0.9rem; color: var(--text-gold); }
 
@@ -422,3 +422,7 @@ footer {
         text-align: center;
     }
 }
+
+
+
+

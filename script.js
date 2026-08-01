@@ -1,3 +1,4 @@
+
 // مصفوفة اللغات والترجمة الشاملة لجميع الإضافات
 const data = {
     ar: {
@@ -64,35 +65,40 @@ function toggleLanguage() {
     htmlTag.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
     langBtn.textContent = currentLang === 'ar' ? 'English' : 'العربية';
 
-    document.getElementById('h-title').innerHTML = `<span class="hero-magic">$</span> ${data[currentLang].title} <span class="hero-magic">$</span>`;
-    document.getElementById('h-sub').textContent = data[currentLang].sub;
-    document.getElementById('btn-text').textContent = data[currentLang].btn;
-    document.getElementById('moon-card-title').textContent = data[currentLang].m_title;
-    document.getElementById('news-title').textContent = data[currentLang].news_title;
-    document.getElementById('why-title').textContent = data[currentLang].why_t;
-    document.getElementById('feat1-t').textContent = data[currentLang].f1_t;
-    document.getElementById('feat1-d').textContent = data[currentLang].f1_d;
-    document.getElementById('feat2-t').textContent = data[currentLang].f2_t;
-    document.getElementById('feat2-d').textContent = data[currentLang].f2_d;
-    document.getElementById('feat3-t').textContent = data[currentLang].f3_t;
-    document.getElementById('feat3-d').textContent = data[currentLang].f3_d;
-    document.getElementById('feat3-list').innerHTML = data[currentLang].f3_l;
-    document.getElementById('warn-t').textContent = data[currentLang].warn_t;
+    const currentData = data[currentLang];
+
+    document.getElementById('h-title').innerHTML = `<span class="hero-magic">$</span> ${currentData.title} <span class="hero-magic">$</span>`;
+    document.getElementById('h-sub').textContent = currentData.sub;
+    document.getElementById('btn-text').textContent = currentData.btn;
+    document.getElementById('moon-card-title').textContent = currentData.m_title;
+    document.getElementById('news-title').textContent = currentData.news_title;
+    document.getElementById('why-title').textContent = currentData.why_t;
+    document.getElementById('feat1-t').textContent = currentData.f1_t;
+    document.getElementById('feat1-d').textContent = currentData.f1_d;
+    document.getElementById('feat2-t').textContent = currentData.f2_t;
+    document.getElementById('feat2-d').textContent = currentData.f2_d;
+    document.getElementById('feat3-t').textContent = currentData.f3_t;
+    document.getElementById('feat3-d').textContent = currentData.f3_d;
+    document.getElementById('feat3-list').innerHTML = currentData.f3_l;
+    document.getElementById('warn-t').textContent = currentData.warn_t;
     document.getElementById('warn-d').textContent = data[currentLang].warn_d;
-    document.getElementById('rec-title').textContent = data[currentLang].rec_t;
-    document.getElementById('rec-d1').textContent = data[currentLang].rec_d1;
-    document.getElementById('rec-d2').textContent = data[currentLang].rec_d2;
-    document.getElementById('soon-title').textContent = data[currentLang].soon_t;
-    document.getElementById('soon-sub').textContent = data[currentLang].soon_s;
-    document.getElementById('g1-t').textContent = data[currentLang].g1;
-    document.getElementById('g2-t').textContent = data[currentLang].g2;
-    document.getElementById('g3-t').textContent = data[currentLang].g3;
-    document.getElementById('footer-cr').textContent = data[currentLang].cr;
-    document.getElementById('wheel-card-title').textContent = data[currentLang].wheel_t;
-    document.getElementById('wheel-card-sub').textContent = data[currentLang].wheel_s;
+    document.getElementById('rec-title').textContent = currentData.rec_t;
+    document.getElementById('rec-d1').textContent = currentData.rec_d1;
+    document.getElementById('rec-d2').textContent = currentData.rec_d2;
+    document.getElementById('soon-title').textContent = currentData.soon_t;
+    document.getElementById('soon-sub').textContent = currentData.soon_s;
+    document.getElementById('g1-t').textContent = currentData.g1;
+    document.getElementById('g2-t').textContent = currentData.g2;
+    document.getElementById('g3-t').textContent = currentData.g3;
+    document.getElementById('footer-cr').textContent = currentData.cr;
+    document.getElementById('wheel-card-title').textContent = currentData.wheel_t;
+    document.getElementById('wheel-card-sub').textContent = currentData.wheel_s;
     
-    document.querySelectorAll('.soon-lbl').forEach(el => el.textContent = data[currentLang].lbl);
+    document.querySelectorAll('.soon-lbl').forEach(el => el.textContent = currentData.lbl);
+    
+    // إعادة بناء الحسابات والتقويم لتحديث النصوص البرمجية ديناميكياً
     calculateMoonAndDate();
+    generateMoonCalendar(); 
     updateCosmicWheel(document.getElementById('time-slider').value);
 }
 
@@ -106,7 +112,6 @@ function calculateMoonAndDate() {
     
     document.getElementById('numeric-date').textContent = currentLang === 'ar' ? `التاريخ الرقمي الفلكي: ${year}/${month}/${day}` : `Celestial Digital Date: ${year}/${month}/${day}`;
     
-    const moonRender = document.getElementById('moon-render');
     const shadowRender = document.getElementById('shadow-render');
     const phaseText = document.getElementById('moon-phase-text');
     const liqVal = document.getElementById('liquidity-val');
@@ -159,35 +164,47 @@ function updateCosmicWheel(val) {
     statusText.textContent = data[currentLang].alignments[alignmentIndex];
 }
 
+// دالة توليد التقويم الشهري المربوط ديناميكياً بأيام الشهر الحالي
 function generateMoonCalendar() {
     const calendar = document.getElementById("moon-calendar");
+    if (!calendar) return; // حماية في حال عدم تحميل العنصر بعد
+    
     calendar.innerHTML = "";
-    const today = new Date().getDate();
+    
+    // جلب عدد الأيام الحقيقي للشهر الحالي بدلاً من افتراض 30 يوماً دائماً
+    const now = new Date();
+    const currentYear = now.getFullYear();
+    const currentMonth = now.getMonth();
+    const today = now.getDate();
+    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
 
-    for(let i=1; i<=30; i++){
+    for(let i = 1; i <= daysInMonth; i++){
         const box = document.createElement("div");
         box.classList.add("day-box");
         box.innerHTML = i;
 
+        // تحديد يوم اليوم
         if(i === today){
             box.classList.add("today");
         }
+        
+        // ربط تلوين الخلفية الفلكية للتقويم مع منطق دالة الحساب الرئيسية بدقة
         if(i >= 13 && i <= 16){
             box.classList.add("full-moon");
-        }
-        if(i >= 27 || i <= 2){
+        } else if(i >= 27 || i <= 2){
             box.classList.add("dark-moon");
-        }
-        if(i > 2 && i < 13){
+        } else if(i > 2 && i < 13){
             box.classList.add("new-moon");
+        } else {
+            box.classList.add("balanced-moon");
         }
         calendar.appendChild(box);
     }
 }
 
-// تشغيل الحسابات تلقائياً عند التحميل
-window.onload = function () {
+// تشغيل الحسابات تلقائياً عند التحميل الكامل لضمان وجود العناصر في الـ DOM
+window.addEventListener('DOMContentLoaded', () => {
     calculateMoonAndDate();
     generateMoonCalendar();
     updateCosmicWheel(15);
-}
+});

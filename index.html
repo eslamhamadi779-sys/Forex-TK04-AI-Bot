@@ -4,25 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🔥 فوركس سوق العملات الأجنبية | طيكيل 😈 ملك ملوك الجان</title>
-    <!-- الخطوط وأيقونات FontAwesome للروابط -->
+    
+    <!-- ############################################################
+         # [AR] الخطوط والمكتبات الخارجية (أيقونات وتقطير خطوط جوجل)
+         # [EN] External Fonts & Libraries (Google Fonts & FontAwesome)
+         ############################################################ -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- ############################################################
+         # [AR] بيانات الميتا والـ SEO الخاصة بالمنصة والمطور
+         # [EN] Meta Tags & SEO Parameters for Platform and Developer
+         ############################################################ -->
     <meta name="description" content="بوابة طيكيل للفوركس وسوق العملات الأجنبية - التحليلات الذكية برعاية مستشار المحقق نادر بكار الماورائي.">
     <meta name="keywords" content="فوركس, سوق العملات, بوت تلجرام, ذكاء اصطناعي, طيكيل, المحقق نادر بكار">
     <meta name="author" content="ESO Company, إسلام الهاشمي">
     
-    <!-- استدعاء ملف التنسيقات الخارجي -->
+    <!-- ############################################################
+         # [AR] استدعاء ملف التنسيقات الموحد (تم حذف الـ 11 استدعاء القديمة)
+         # [EN] Single CSS File Linking (Removed the 11 legacy stylesheets)
+         ############################################################ -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- الهيدر العلوي -->
+<!-- ############################################################
+     # [AR] الهيدر العلوي: الشعار وزر تحويل لغة المنصة
+     # [EN] Top Header: Logo and Platform Language Switch Button
+     ############################################################ -->
 <header>
     <div class="logo">FX TK04</div>
     <button class="lang-btn" onclick="toggleLanguage()" id="lang-btn">English</button>
 </header>
 
-<!-- شريط العملات المتحرك بالأعلام من TradingView -->
+<!-- ############################################################
+     # [AR] شريط أسعار العملات الفوري المتحرك بالأعلام من TradingView
+     # [EN] Live Ticker Tape / Currency Rates Widget by TradingView
+     ############################################################ -->
 <div style="width: 100%; background-color: #0b0c10;">
   <div class="tradingview-widget-container">
     <div class="tradingview-widget-container__widget"></div>
@@ -41,7 +59,10 @@
   </div>
 </div>
 
-<!-- واجهة الهيرو الرئيسية -->
+<!-- ############################################################
+     # [AR] واجهة الهيرو الترحيبية: رابط استدعاء البوت على التلجرام
+     # [EN] Hero Landing Section: Telegram Bot Summoning Action Link
+     ############################################################ -->
 <section id="hero">
   <div class="hero-content">
     <h1 class="hero-title" id="h-title">
@@ -51,10 +72,18 @@
     <a href="https://t.me/TK04chat_bot?start" target="_blank" id="hero-telegram-btn">
         <i class="fab fa-telegram"></i> <span id="btn-text">استدعي طيكيل على تلجرام الآن</span>
     </a>
+
+    <!-- 🔔 الزر الجديد الخاص بقناة التوصيات الفورية -->
+        <a href="https://t.me/Tk07ForexESOweb" target="_blank" id="hero-channel-btn" style="background: linear-gradient(45deg, #1d93d2, #0077b5); color: #ffffff; border: none; padding: 15px 35px; font-size: 1.1rem; font-weight: 700; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 15px rgba(29, 147, 210, 0.4); transition: 0.3s; text-decoration: none; display: inline-block;">
+            <i class="fas fa-bullhorn"></i> <span id="channel-btn-text">قناة توصيات طيكيل الحية</span>
+        </a>
   </div>
 </section>
 
-<!-- لوحة التحكم الحية المتطورة (الفلك الدائري وقمر السيولة) -->
+<!-- ############################################################
+     # [AR] لوحة التحكم الأولى: كارت الرصد الفلكي وعجلة الاقتران المالي
+     # [EN] Dashboard Part 1: Lunar Phase Status & Cosmic Alignment Wheel
+     ############################################################ -->
 <div class="live-dashboard">
     <!-- كارت القمر الفلكي والتقويم بالأرقام والرسم -->
     <div class="dashboard-card moon-status">
@@ -90,7 +119,10 @@
     </div>
 </div>
 
-<!-- الشارت الحي والأخبار الحمراء المهمة في صف واحد متناسق -->
+<!-- ############################################################
+     # [AR] لوحة التحكم الثانية: الشارت الفني الحي والأجندة الإخبارية الحمراء
+     # [EN] Dashboard Part 2: Technical Live Chart & Red Economic News Feed
+     ############################################################ -->
 <div class="live-dashboard" style="padding-top:0;">
     <!-- كارت الشارت الحي -->
     <div class="dashboard-card" style="display:block;">
@@ -123,7 +155,10 @@
     </div>
 </div>
 
-<!-- تنوية: لماذا نحن مختلفون -->
+<!-- ############################################################
+     # [AR] قسم التنويهات والمميزات: استراتيجية إدارة المخاطر الآمنة
+     # [EN] Core Features & Disclaimers: Safe Risk Management Strategy
+     ############################################################ -->
 <section class="why-TK04">
   <h2 id="why-title">😈 لماذا منصة TK04 مختلفة؟</h2>
   <div class="grid-3">
@@ -152,14 +187,20 @@
   </div>
 </section>
 
-<!-- توصيات وتحليلات -->
+<!-- ############################################################
+     # [AR] قسم الخوارزميات العادلة: حدود استخدام الملك طيكيل المجانية
+     # [EN] Fair Algorithms Section: King Tykeel's Free Usage Boundaries
+     ############################################################ -->
 <div class="fair-algorithm">
   <h3 id="rec-title">توصيات وتحليلات</h3>
   <p id="rec-d1">توصيات وتحليلات من قلب السوق إليك بالمجان.</p>
   <p id="rec-d2">طيكيل ملك ملوك الجان يملك حدوداً للاستخدام فهو مجاني 100%.</p>
 </div>
 
-<!-- قريباً -->
+<!-- ############################################################
+     # [AR] التحديثات القادمة: كروت الميزات المستقبلية للمنصة
+     # [EN] Future Deployments: Feature Cards Coming Soon to Platform
+     ############################################################ -->
 <section class="coming-soon">
 <h2 id="soon-title">قريبًا مع TK04</h2>
 <p id="soon-sub">دردشة حية 24/7 مع ملك ملوك الجان TK04</p>
@@ -179,11 +220,14 @@
 </div>
 </section>
 
-<!-- الفوتر والروابط الإبداعية -->
+<!-- ############################################################
+     # [AR] تذييل الصفحة: الرموز المالية وروابط بورتفوليو أعمال المطور
+     # [EN] Global Footer: Currency Typography & Developer Portfolio Ecosystem
+     ############################################################ -->
 <footer>
    <div class="footer-symbols">£€$, A$,⏳⌛💸💵💶💴🪙💰💳🪙💎 AU$$</div>
     <div class="footer-links">
-        <a href="https://www.facebook.com/eslam.bahrya/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="https://www.facebook.com/share/1DbMWGbpCw/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i> Facebook</a>
         <a href="https://www.noor-book.com/u/Eslam-Hamadi-Hashimi/books" target="_blank" rel="noopener noreferrer"><i class="fas fa-book"></i> Noor Book</a>
         <a href="https://www.tiktok.com/@eslamhamadi5" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i> TikTok</a>
         <a href="https://www.ktobati.com/book/%D9%83%D8%AA%D8%A7%D8%A8-%D9%82%D8%B5%D8%B5-%D9%82%D8%B5%D9%8A%D8%B1%D8%A9-0" target="_blank" rel="noopener noreferrer"><i class="fas fa-feather-alt"></i> Ktobati</a>
@@ -195,7 +239,11 @@
     <p id="footer-cr">إسلام الهاشمي © جميع الحقوق محفوظة 2026 | ESO 🚀</p>
 </footer>
 
-<!-- استدعاء ملف التفاعلية والمنطق الخارجي قبل إغلاق body -->
+<!-- ############################################################
+     # [AR] ربط منطق الجافا سكريبت التفاعلي الفلكي للمنصة
+     # [EN] Core JavaScript Logic Binding for Interactive Elements
+     ############################################################ -->
 <script src="script.js"></script>
+
 </body>
 </html>

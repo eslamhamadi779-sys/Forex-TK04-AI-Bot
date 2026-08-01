@@ -1,10 +1,31 @@
+/* ============================================================
+   # [AR] إعادة تعيين التنسيقات العامة للمتصفحات (CSS Reset)
+   # [EN] Global CSS Reset & Box Sizing Core Rules
+   ============================================================ */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================================================
+   # [AR] المتغيرات الأساسية وجذور التنسيق (Root Variables & Base)
+   # [EN] Central Root Variables, Typography & Main Body Configurations
+   ============================================================ */
 :root {
     --bg-color: #0b0c10;
     --container-bg: #1f2833;
     --text-gold: #c5a880;
     --neon-blue: #66fcf1;
     --danger-red: #ff4d4d;
+    --teal-color: #2b7a78;
     --font-ar: 'Cairo', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -16,7 +37,14 @@ body {
     overflow-x: hidden;
 }
 
-/* الهيدر العلوي */
+html[dir="ltr"] { 
+    --font-ar: 'Montserrat', sans-serif; 
+}
+
+/* ============================================================
+   # [AR] التنسيق الخاص بالهيدر العلوي وزر اللغات
+   # [EN] Top Navigation Header & Language Switching Button Styles
+   ============================================================ */
 header {
     display: flex;
     justify-content: space-between;
@@ -49,7 +77,10 @@ header {
     color: var(--bg-color); 
 }
  
-/* واجهة الهيرو الرئيسية */
+/* ============================================================
+   # [AR] واجهة الهيرو الرئيسية وأزرار تلجرام التفاعلية المزدوجة
+   # [EN] Hero Landing Section & Telegram Dual CTA Interactive Buttons
+   ============================================================ */
 #hero {
     display: flex;
     justify-content: center;
@@ -77,7 +108,17 @@ header {
     margin-bottom: 30px; 
     text-shadow: 0 0 10px rgba(0,0,0,0.8); 
 }
+
+/* حاوية الأزرار المرنة */
+.hero-buttons-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
  
+/* زر البوت الأصلي */
 #hero-telegram-btn {
     background: linear-gradient(45deg, #0088cc, #00a6ff);
     color: #ffffff;
@@ -97,8 +138,32 @@ header {
     transform: translateY(-3px); 
     box-shadow: 0 6px 25px rgba(0, 136, 204, 0.7); 
 }
+
+/* زر قناة التوصيات الجديد */
+#hero-channel-btn {
+    background: linear-gradient(45deg, #1d93d2, #0077b5);
+    color: #ffffff;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(29, 147, 210, 0.4);
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#hero-channel-btn:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 25px rgba(29, 147, 210, 0.7);
+}
  
-/* حاوية الأدوات الحية */
+/* ============================================================
+   # [AR] لوحة التحكم الذكية وتخطيط كروت البيانات الحية
+   # [EN] Live Dashboard Grid Layout & Responsive Card Systems
+   ============================================================ */
 .live-dashboard {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -106,10 +171,6 @@ header {
     padding: 20px 5%;
 }
 
-@media (max-width: 992px) { 
-    .live-dashboard { grid-template-columns: 1fr; } 
-}
- 
 .dashboard-card {
     background-color: var(--container-bg);
     border-radius: 10px;
@@ -121,11 +182,13 @@ header {
     justify-content: center;
 }
 
-/* كارت الفلك الرقمي ورسم القمر */
-.moon-status { 
-    text-align: center; 
-    width: 100%; 
-    box-sizing: border-box;
+/* ============================================================
+   # [AR] كارت الرصد الفلكي وتنسيقات مجسم وجدول القمر الرقمي
+   # [EN] Lunar Astronomic Card, Moon Graphics 3D Engine & Calendar Grid
+   ============================================================ */
+.moon-status {
+    width: 100%;
+    text-align: center;
 }
 
 .moon-graphic-container {
@@ -153,7 +216,7 @@ header {
     height: 100%;
     width: 100%;
     border-radius: 50%;
-    background: #0b0c10;
+    background: var(--bg-color);
     transition: .6s;
 }
 
@@ -182,12 +245,13 @@ header {
 }
 
 .day-box {
-    background: #111;
+    --card-dark: #111;
     padding: 10px;
     border-radius: 10px;
     text-align: center;
     font-size: 14px;
     border: 1px solid rgba(255, 255, 255, .1);
+    background: var(--card-dark);
 }
 
 .today {
@@ -196,7 +260,7 @@ header {
 }
 
 .full-moon {
-    background: #c5a880;
+    background: var(--text-gold);
     color: #000;
 }
 
@@ -205,10 +269,13 @@ header {
 }
 
 .new-moon {
-    background: #2b7a78;
+    background: var(--teal-color);
 }
 
-/* العجلة الفلكية التفاعلية */
+/* ============================================================
+   # [AR] عجلة الاقتران الكوني التفاعلية ومحددات المدى
+   # [EN] Cosmic Planetary Wheel, Alignment Orbit Objects & Range Sliders
+   ============================================================ */
 .cosmic-container { 
     width: 100%; 
     text-align: center; 
@@ -258,13 +325,23 @@ header {
     background: var(--text-gold); cursor: pointer; box-shadow: 0 0 8px var(--neon-blue);
 }
 
-/* أقسام المحتوى والتنويهات */
+/* ============================================================
+   # [AR] أقسام المحتوى والميزات وشبكات العرض التوضيحية
+   # [EN] Platform Features, Risk Disclaimers & Info Grid Frameworks
+   ============================================================ */
 section, .fair-algorithm {
     padding: 40px 5%; margin: 20px 5%; border-radius: 10px;
     background-color: rgba(31, 40, 51, 0.5);
 }
 
 h2, h3 { color: var(--text-gold); }
+
+.why-TK04, .coming-soon {
+    padding: 40px 5%; margin: 20px 5%; border-radius: 10px;
+    background-color: rgba(31, 40, 51, 0.5);
+}
+
+.soon-lbl { font-weight: 700; font-size: 0.9rem; color: var(--text-gold); }
 
 .grid-3 {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -276,7 +353,15 @@ h2, h3 { color: var(--text-gold); }
     border-radius: 8px; border-left: 4px solid var(--text-gold);
 }
 
-/* الفوتر */
+html[dir="ltr"] .grid-3 div, html[dir="ltr"] .gift-card { 
+    border-left: none; 
+    border-right: 4px solid var(--text-gold); 
+}
+
+/* ============================================================
+   # [AR] تذييل الصفحة وروابط البورتفوليو وشبكات التواصل
+   # [EN] Footer Navigation, Forex Typography & Social Anchor Frameworks
+   ============================================================ */
 footer {
     background-color: #050608; padding: 40px 5% 20px 5%; text-align: center;
     border-top: 2px solid var(--container-bg);
@@ -310,12 +395,24 @@ footer {
 .footer-links a:hover { 
     color: var(--neon-blue); 
 }
- 
-html[dir="ltr"] { 
-    --font-ar: 'Montserrat', sans-serif; 
-}
 
-html[dir="ltr"] .grid-3 div, html[dir="ltr"] .gift-card { 
-    border-left: none; 
-    border-right: 4px solid var(--text-gold); 
+/* ============================================================
+   # [AR] قواعد الشاشات سريعة الاستجابة (Responsive Media Queries)
+   # [EN] Fluid Layout Media Queries for Tablets & Mobile Displays
+   ============================================================ */
+@media (max-width: 768px) {
+    .hero-title { font-size: 1.8rem; }
+    .hero-sub { font-size: 1.1rem; }
+    .live-dashboard {
+        grid-template-columns: 1fr;
+    }
+    .hero-buttons-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    #hero-telegram-btn, #hero-channel-btn {
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+    }
 }

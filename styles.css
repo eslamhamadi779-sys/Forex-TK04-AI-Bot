@@ -140,26 +140,26 @@ header {
 }
 
 /* زر قناة التوصيات الجديد */
+
 #hero-channel-btn {
-    background: linear-gradient(45deg, #1d93d2, #0077b5);
-    color: #ffffff;
+    background: linear-gradient(45deg, #c5a880, #e6dcc7);
+    color: #0b0c10;
     border: none;
     padding: 15px 35px;
     font-size: 1.1rem;
     font-weight: 700;
     border-radius: 50px;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(29, 147, 210, 0.4);
+    box-shadow: 0 4px 15px rgba(197, 168, 128, 0.4);
     transition: 0.3s;
     text-decoration: none;
     display: inline-block;
 }
-
-#hero-channel-btn:hover {
+#hero-channel-btn:hover { 
     transform: translateY(-3px); 
-    box-shadow: 0 6px 25px rgba(29, 147, 210, 0.7);
+    box-shadow: 0 6px 25px rgba(197, 168, 128, 0.7); 
 }
- 
+
 /* ============================================================
    # [AR] لوحة التحكم الذكية وتخطيط كروت البيانات الحية
    # [EN] Live Dashboard Grid Layout & Responsive Card Systems
@@ -270,6 +270,12 @@ header {
 
 .new-moon {
     background: var(--teal-color);
+}
+
+
+.balanced-moon {
+    background: rgba(102, 252, 241, 0.08);
+    border-color: var(--neon-blue);
 }
 
 /* ============================================================
